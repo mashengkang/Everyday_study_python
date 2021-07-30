@@ -1,0 +1,14 @@
+1. 现在的github 虽然还是master,但是上传前需要将master名称更改为main
+git branch -M main
+
+2. To git.zhlh6.cn:mashengkang/Everyday_study_python.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'git.zhlh6.cn:mashengkang/Everyday_study_python.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+报出来这样的问题是因为GitHub上面的readme没有在本地,所以需要先pull下来
+ 
+ git pull --rebase origin main ,之后再提交就可以了
+ 
