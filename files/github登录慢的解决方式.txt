@@ -1,0 +1,14 @@
+解决Github访问过慢（windows）
+https://blog.csdn.net/qq_42282217/article/details/119063578
+
+1.复制你要访问的github网址到该网站进行查询：ipaddress，查询后会得到一个ip
+2.打开C:\Windows\System32\drivers\etc目录下的hosts文件，再后面进行追加，内容为刚刚查询出来的ip和复制的github网址
+//追加以下内容：
+    140.82.114.4	github.com
+    140.82.112.4	github.com
+    185.199.108.153	necolas.github.io			
+    185.199.109.153	necolas.github.io
+    185.199.110.153	necolas.github.io
+    185.199.111.153	necolas.github.io
+3.追加完成后，保存该文件，然后打开cmd命令行，刷新DNS
+C:\Users\Administrator> ipconfig /flushdns
