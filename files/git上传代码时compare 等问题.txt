@@ -1,4 +1,4 @@
-1. 现在的github 虽然还是master,但是上传前需要将master名称更改为main
+1. 现在的github 虽然还是master,但是上传前需要将master名称更改为main.不然会出现提交后的代码没有办法push 成功,会显示compare & push request
 git branch -M main
 
 2. To git.zhlh6.cn:mashengkang/Everyday_study_python.git
