@@ -1,0 +1,35 @@
+1. 现在的github 虽然还是master,但是上传前需要将master名称更改为main.不然会出现提交后的代码没有办法push 成功,会显示compare & push request
+git branch -M main
+
+2. To git.zhlh6.cn:mashengkang/Everyday_study_python.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'git.zhlh6.cn:mashengkang/Everyday_study_python.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+报出来这样的问题是因为GitHub上面的readme没有在本地,所以需要先pull下来
+ 
+ git pull --rebase origin main ,之后再提交就可以了
+ 
+ 
+3. 更新文件到github
+	今天push文件的时候,没有成功,
+	! [rejected] main -> main (fetch first) error: failed to push some refs to 'git.zhlh6.cn:mashengkang/Everyday_study_python.git' 
+	hint: Updates were rejected because the remote contains work that you do 
+	hint: not have locally. This is usually caused by another repository pushing 
+	hint: to the same ref. You may want to first integrate the remote changes 
+	hint: (e.g., 'git pull ...') before pushing again. hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+	百度后说是因为远程库中有文件不在本地,自己不知道是不是这个原因,后来操作了一下git pull,再次推送就成功了,所以以后注意下操作步骤,如下:
+	
+    1.输入指令：git add 文件名称或者 git add.
+
+	2.输入指令：git commit -m "这是注释内容"
+
+	3.这一步从本地仓库或本地分支获取并集成(整合)，输入指令：git pull origin master
+
+	4.如果过程中出现‘please enter a commit message…’,首先按下esc退出键然后输入 ：wq即可
+
+	5.输入指令：git push -u origin master
+	
+ 
