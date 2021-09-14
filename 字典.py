@@ -52,6 +52,27 @@ print(res1)
 # 改
 info['name'] = '红海'
 print(info)
+# update 该函数无返回值
+info.update({'name': '小海', 'age': 13})
+print(info)  # {'name': '小海', 'age': 13}
+# dict.setdefault(key,value) 返回值为key所对应的value,如果dict中存在key,则会返回原字典中key对应的value,
+# 如果dict中没有这个key,则会在字典中添加进这对键值对,并返回新的value
+new_value1 = info.setdefault('name', 'xiaoma')
+new_value2 = info.setdefault('sex', '男')
+print(new_value1)  # 小海
+print(new_value2)  # 男
+print(info)  # {'name': '小海', 'age': 13, 'sex': '男'}
 
-info.update({'name': '小海'})
-print(info)
+# values():获取当前字典中所有键值对中的值(value)
+# 用法: dict.values() -> 无需传参,返回一个value集合的伪列表
+print(info.values())
+# dict_values(['小海', 13, '男'])
+# 返回的这个值只能用来观察,无法像操作列表一样直接操作它,但是可以通过list()函数格式化它
+
+# []的获取方法
+name = info['name']
+print(name)  # 小海
+# get用法: dict.get(key,default=None)
+# key:需要获取value的key, default:key不存在则返回默认值,默认是None,也可以自定义
+# 使用[]和get()两种不同的方式对value进行查看,[]方法如果获取的key不存在,则直接报错,get()获取的key不存在则返回default的信息
+

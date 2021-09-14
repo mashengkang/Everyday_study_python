@@ -54,7 +54,7 @@ print(info.count('a'))  # 7
 
 # 7.startswith endswith 判断字符串 开始/结尾 是否是某成员(元素)
 # bool_str = string.startswith(item) ->item:你想查询的元素,返回布尔值
-info= 'this is a string'
+info = 'this is a string'
 result = info.startswith('this')
 print(result)  # True
 print(info.startswith('this is a string'))  # True
@@ -85,3 +85,63 @@ str_1 = 'hello xiaoma'
 new_str_1 = str_1.replace('l', '0', 1)
 print(new_str_1)  # he0lo xiaoma
 
+# 11.isspace 判断字符串是否是一个由空格组成的字符串(空格不是空字符串)
+# print(' '.isspace())  # true
+# 12. istitle 判断字符串是否是一个标题类型 即首字母大写,只用于英文
+# 13. isupper   islower 判断字符串是否都是由大写/小写字母组成,返回bool类型
+title = 'Back Of China'
+upper_str = 'PYTHON IS A GOOD CODE 哈哈!'
+lower_str = 'i love you'
+print(title.istitle())  # True 所有单词的首字母都是大写才是True
+print(upper_str.isupper())  # True 只判断单词,中文和标点不作判断
+
+# 14.字符的编码格式
+# gbk:中文编码 ascii:英文编码
+# utf-8 是一种国际通用的编码格式
+
+# 15. 字符串的格式化
+""" 
+%c 格式化字符 字母只支持一个字母(print('%c' % 'a')) 数字从1到999999
+%u 格式化无符号整型(正整型)
+%f 格式化浮点型
+%d 格式化整型
+%s 格式化字符串,通用类型
+%o 格式化无符号八进制数
+%x 格式化无符号十六进制
+%e 科学计数法格式化浮点数
+"""
+print('%c' % 1020)
+print('%c' % 'b')
+print('%u' % -1)
+print('%f' % 3.14)  # 3.140000 小数点后6位
+print('%d' % 10.9)  # 10 向下取整
+print('%s' % 123)
+print('%s' % '123.1')
+print('{:d}'.format(1))  # 1
+print('{:f}'.format(1.2))  # 1.200000
+
+# 16. 转义字符 格式:\+字符
+"""
+\n 换行,一般用于末尾,strip对其也有效
+\t 横向制表符(可以认为是要给间隔符)
+\v 纵向制表符(会有一个男性符号)
+\a 响铃
+\b 退格符,将光标前移,覆盖(删除前一个)
+\r 回车
+\f 翻页(几乎用不到)
+\' 转义字符串中的单引号
+\" 转义字符串中的双引号
+\\ 转义斜杠
+"""
+info1 = ('my name '
+       'is xiaoma')
+info2 = ('my name \nis xiaoma')
+print(info1)  # my name is xiaoma 没有换行
+print(info2) # 有换行
+info_b = 'my name is x\biaoma'
+print(info_b)  # my name is iaoma  \b前的字符被删除
+print('my name is \'xiaoma\'')  # my name is 'xiaoma'
+print('my name is \\ xiaoma')  # my name is \ xiaoma
+# 转义无效符号 在字符串前面加r,则使转义字符无效
+print(r'my name \tis xiaoma')  # my name \nis xiaoma
+print('my name \tis xiaoma')  # my name 	is xiaoma
