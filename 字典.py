@@ -44,7 +44,7 @@ print(res)  # 长沙
 # 删除不存在的key会报错
 # info.pop('xxx')
 
-# popitem 最后一对键值对删除,字典无序, 返回的是一个元组
+# popitem 最后一对键值对删除,字典无序, 返回的是一个元组(内容是键值对),如果字典为空,则会报错
 res1 = info.popitem()
 print(info)
 print(res1)
@@ -75,4 +75,22 @@ print(name)  # 小海
 # get用法: dict.get(key,default=None)
 # key:需要获取value的key, default:key不存在则返回默认值,默认是None,也可以自定义
 # 使用[]和get()两种不同的方式对value进行查看,[]方法如果获取的key不存在,则直接报错,get()获取的key不存在则返回default的信息
+
+# 字典的copy
+# dict.copy() -> 该函数无参数,返回一个一样的内存地址不同的字典
+fruits = {
+    'apple': 30,
+    'banana': 50,
+    'pear': 100
+}
+real_fruits = fruits.copy()
+print(real_fruits)
+real_fruits['orange'] = 50
+real_fruits.update({'cherry': 100})
+print(real_fruits)  # {'apple': 30, 'banana': 50, 'pear': 100, 'orange': 50, 'cherry': 100}
+print(fruits)  # {'apple': 30, 'banana': 50, 'pear': 100}
+real_fruits['apple'] = real_fruits['apple'] - 5
+print(real_fruits)  # {'apple': 25, 'banana': 50, 'pear': 100, 'orange': 50, 'cherry': 100}
+real_fruits.clear()
+print(real_fruits)  # {}
 
