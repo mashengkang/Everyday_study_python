@@ -2,8 +2,8 @@
 # 字符串是不可被修改的,所有的函数都是生成新的字符串
 
 #  1.capitalize 只能是字符串
-#  只对字符串 ,将首字母大写
-name = 'xiao ma'
+#  只对字符串 ,将首字母大写,后面的全部小写
+name = 'xiao Ma'
 info = 'hello 小马'
 _info = '小马 hello'
 new_str = '1314'
@@ -11,7 +11,7 @@ new_name = name.capitalize()
 new_info = info.capitalize()
 _new_info = _info.capitalize()
 new_new_str = new_str.capitalize()
-print(new_name, name)  # Xiao ma xiao ma
+print(new_name, name)  # Xiao ma xiao Ma
 # print(new_info, info)
 # print(_new_info, _info)
 # print(new_str, new_new_str)
@@ -59,12 +59,16 @@ result = info.startswith('this')
 print(result)  # True
 print(info.startswith('this is a string'))  # True
 
-# 8. find 和index
-# srting.find(item) ->item:你想查询的元素,返回一个整型(所在位置下标)
+# 8. find(rfind) 和index(index)
+# srting.find(item,start,end) ->item:你想查询的元素,返回一个整型(所在位置下标),start字符串查询的开始位置,end查询的结束位置
 # srting.index(item) ->item:你想查询的元素,返回一个整型(所在位置下标).或者报错
-# find 找不到元素会返回-1 , index找不到元素会报错
+# find 找不到元素会返回-1 , index找不到元素会报错,
+# find 若字符串中出现多次查询的元素,只返回第一次出现的位置
 info = 'python is a good code'
 result = info.find('a')
+print('----------')
+result2 = info.rfind('o', 1, 20)  # 18
+print(result2)
 print(result)  # 10
 print(info.find('ok'))  # -1
 # print(info.index('ok'))  # ValueError: substring not found
@@ -123,11 +127,11 @@ print('{:f}'.format(1.2))  # 1.200000
 # 16. 转义字符 格式:\+字符
 """
 \n 换行,一般用于末尾,strip对其也有效
-\t 横向制表符(可以认为是要给间隔符)
+\t 横向制表符(可以认为是要给间隔符,默认就是table键缩进)
 \v 纵向制表符(会有一个男性符号)
 \a 响铃
 \b 退格符,将光标前移,覆盖(删除前一个)
-\r 回车
+\r 回车,代表光标的位置(从\r出现的位置开始作为光标的起点
 \f 翻页(几乎用不到)
 \' 转义字符串中的单引号
 \" 转义字符串中的双引号
@@ -145,3 +149,22 @@ print('my name is \\ xiaoma')  # my name is \ xiaoma
 # 转义无效符号 在字符串前面加r,则使转义字符无效
 print(r'my name \tis xiaoma')  # my name \nis xiaoma
 print('my name \tis xiaoma')  # my name 	is xiaoma
+print('岁月是把杀猪刀,\r任谁都没有办法')  # 任谁都没有办法
+
+# 17 split() 按照指定的字符进行分割,把一个字符串分割成一个列表
+vars1 = 'user_admin_id_123'
+vars2 = 'uid=123&type=ab&kw=hh'
+
+# str.split()
+res1 = vars1.split('_')
+print(res1)  # ['user', 'admin', 'id', '123']
+print(vars1.split("_", 1))  # ['user', 'admin_id_123']
+
+res2 = vars2.split('&')
+for i in res2:
+       print(i.split('='), end=' ')  # ['uid', '123'] ['type', 'ab'] ['kw', 'hh']
+
+arr = ['user', 'admin', 'id', '123']
+# str.join() 按照指定的字符,把容器类型中的数据连接成一个字符串
+res_arr = '='.join(arr)
+print(res_arr)  # user=admin=id=123
