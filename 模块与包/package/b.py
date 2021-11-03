@@ -1,0 +1,2 @@
+def funcb():
+    print('funcb')

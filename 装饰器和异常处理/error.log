@@ -1,0 +1,12 @@
+2021-11-03 21:12:28 ERROR 
+ Traceback (most recent call last):
+  File "E:/study_python_everyday/装饰器和异常处理/13.异常处理-自定义异常处理类.py", line 44, in <module>
+    int('aa')
+ValueError: invalid literal for int() with base 10: 'aa'
+
+2021-11-03 21:13:37 ERROR 
+ Traceback (most recent call last):
+  File "E:/study_python_everyday/装饰器和异常处理/13.异常处理-自定义异常处理类.py", line 44, in <module>
+    int('aa')
+ValueError: invalid literal for int() with base 10: 'aa'
+
