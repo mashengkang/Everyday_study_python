@@ -41,7 +41,7 @@
 - 用户名	  name
 - 身份证号  userid
 - 手机卡      phone
-- 卡              card
+- 卡(对象)    card
 
 ##### 控制器对象:Controller 具体的操作控制类
 
