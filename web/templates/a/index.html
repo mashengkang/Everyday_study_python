@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/1.css">
+</head>
+<body>
+    <center style="margin-top: 100px;">
+        <h1>欢迎进入{{ tit }}</h1>
+        <br>
+        <a href="/abc/123">硬编码:跳转</a><br>
+        <a href="{% url 'myhome_abc' %}">通过name路由名:跳转</a><br>
+        <a href="{% url 'myhome_abcd' n %}">带参数的</a>
+    </center>
+</body>
+</html>
